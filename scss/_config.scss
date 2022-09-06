@@ -1,0 +1,23 @@
+$light-color: #f4f4f4;
+$font-stack: Arial, Helvetica, sans-serif;
+$primary:#0e6cff;
+// $primary:#010c1e;
+$secondary:#ff8700;
+// set base on config
+// \\
+
+
+@function set-text-color($color){
+    @if(lightness($color) > 70){
+        @return #333;
+    }@else{
+            @return #fff;
+    }
+}
+
+// set background-color
+@mixin set-background($color) {
+    background-color: $color;
+    color: set-text-color($color);
+}
+
